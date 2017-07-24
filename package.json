@@ -1,0 +1,53 @@
+{
+  "name": "express-amp",
+  "version": "1.0.0",
+  "description": "Express middleware to convert website to Google AMP",
+  "license": "MIT",
+  "main": "index.js",
+  "author": {
+    "name": "Jordi López",
+    "email": "jlopezxs@gmail.com",
+    "url": "http://jlopezxs.github.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlopezxs/express-amp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jlopezxs/express-amp/issues"
+  },
+  "keywords": [
+    "amp",
+    "express",
+    "google amp"
+  ],
+  "scripts": {
+    "lint": "standard src/**/*.js",
+    "lint:fix": "standard src/**/*.js --fix",
+    "example": "npm run build && node example/index",
+    "build": "rm -rf lib && babel src -d lib --source-maps",
+    "prerelease": "npm run lint && npm run build",
+    "release": "npm version -m \"New version: %s\"",
+    "postrelease": "npm run push && npm publish",
+    "push": "git push -u origin master"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "express": "^4.15.3",
+    "standard": "^10.0.2",
+    "swig": "^1.4.2"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "dependencies": {
+    "ampify": "^0.2.6"
+  }
+}
