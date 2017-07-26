@@ -21,7 +21,8 @@ import expressAMP from 'express-amp';
 const app = express();
 
 app.use(expressAMP({
-  override: true
+  override: true,
+  staticsPath: `${process.cwd()}/public`
 }));
 
 app.get('/', (req, res) => {
@@ -39,7 +40,8 @@ import expressAMP from 'express-amp';
 const app = express();
 
 app.use(expressAMP({
-  override: false
+  override: false,
+  staticsPath: `${process.cwd()}/public`
 }));
 
 app.get('/', (req, res) => {
@@ -50,11 +52,12 @@ app.get('/', (req, res) => {
 
 ## Usage
 
-expressAMP({ [override] });
+expressAMP({ [override], [staticsPath] });
 <!-- {.font-large} -->
 where:
 
 - `override` (optional): It brings you the possibility to override the method render or use renderAMP method.
+- `staticsPath` (optional): Directory path of the statics files to get it and include inline in AMP page.
 
 ## License
 
