@@ -17,16 +17,18 @@ function expressAMP ({
     }
 
     if (override === false) {
-      res.renderAMP = function (view, renderOpts, callback) {
-        if (renderOpts)
+      res.renderAMP = function (view, renderOpts = {}, callback) {
+        if (renderOpts) {
           renderOpts.isAMP = true
+        }
         this.render(view, renderOpts, renderCallback(callback))
       }
     } else {
       res.oldRenderMethod = res.render
       res.render = function (view, renderOpts, callback) {
-        if (renderOpts)
+        if (renderOpts) {
           renderOpts.isAMP = true
+        }
         this.oldRenderMethod(view, renderOpts, renderCallback(callback))
       }
     }

@@ -59,6 +59,7 @@ where:
 - `override` (optional): It brings you the possibility to override the method render or use renderAMP method.
 - `staticsPath` (optional): Directory path of the statics files to get it and include inline in AMP page.
 
+
 ## License
 
 MIT © [Jordi López](http://jlopezxs.github.io)

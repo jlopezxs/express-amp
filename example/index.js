@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const swig = require('swig');
-const expressAMP = require('../lib/index');
+const expressAMP = require('../src/index');
 const PORT = 3000;
 const app = express();
 
