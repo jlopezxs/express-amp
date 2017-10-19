@@ -1,4 +1,6 @@
 # express-amp
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/jlopezxs/express-amp.svg)](https://greenkeeper.io/)
 > :zap: Express middleware to convert website to Google AMP
 
 ## Installation
