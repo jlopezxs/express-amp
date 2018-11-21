@@ -1,6 +1,6 @@
 {
   "name": "express-amp",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Express middleware to convert website to Google AMP",
   "license": "MIT",
   "main": "index.js",
