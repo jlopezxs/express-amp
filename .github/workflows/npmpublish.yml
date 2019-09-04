@@ -16,8 +16,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm i
-      - run: npm run lint
+      - run: yarn
+      - run: yarn run lint
 
   publish-npm:
     needs: test
@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - run: npm i
+      - run: yarn
       - run: npm run release patch
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
