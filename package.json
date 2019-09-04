@@ -29,7 +29,7 @@
     "prerelease": "npm run lint && npm run build",
     "release": "npm version -m \"New version: %s\"",
     "postrelease": "npm run push && npm publish",
-    "push": "git push -u origin master"
+    "push": "git add -A && git push -u origin HEAD"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
