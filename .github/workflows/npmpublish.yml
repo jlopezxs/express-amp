@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -18,10 +18,9 @@ jobs:
           node-version: 12
       - run: npm i
       - run: npm run lint
-      - run: npm run build
 
   publish-npm:
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -29,6 +28,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
+      - run: npm i
       - run: npm run release patch
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
